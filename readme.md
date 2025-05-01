@@ -26,14 +26,25 @@ Reddit Modération est une application qui utilise l'API Reddit (PRAW) pour affi
 1. Clonez ce dépôt :
 ```
 git clone https://github.com/DaSilvaThomas/django-moderation.git
+cd django-moderation
 ```
 
-2. Installez les dépendances :
+2. Créer un environnement virtuel :
+```
+python -m venv env
+```
+
+3. Activer l'environnement virtuel :
+```
+env\Scripts\activate
+```
+
+4. Installez les dépendances :
 ```
 pip install -r requirements.txt
 ```
 
-3. Configurez vos identifiants Reddit dans `views.py` :
+5. Configurez vos identifiants Reddit dans `views.py` :
 ```python
 reddit = praw.Reddit(
     client_id="Votre_client_id",
@@ -42,13 +53,13 @@ reddit = praw.Reddit(
 )
 ```
 
-4. Lancez le serveur de développement :
+6. Lancez le serveur de développement :
 ```
 python manage.py migrate
 python manage.py runserver
 ```
 
-5. Accédez à l'application dans votre navigateur à l'adresse http://127.0.0.1:8000/accueil/
+7. Accédez à l'application dans votre navigateur à l'adresse http://127.0.0.1:8000/accueil/
 
 ## Utilisation
 
