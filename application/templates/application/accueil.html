@@ -1,0 +1,57 @@
+{% extends 'application/index.html' %}
+
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'application/posts.css' %}" />
+{% endblock %}
+
+{% block content %}
+
+    <div class="container-accueil">
+        <p class="mb-3">Affichage des 10 posts Reddit les plus "hot" :</p>
+
+        {% for post in posts %}
+            <!-- Affichage du Post -->
+            <div class="card mb-4 p-3 shadow-sm">
+                <div class="d-flex flex-column gap-3">
+
+                    <div class="d-flex align-items-center">
+                        <!-- Icone Subreddit -->
+                        <img src="{{ post.subreddit_icon }}" alt="icon" class="icon">
+                
+                        <!-- Subreddit et date -->
+                        <div class="mb-1">
+                            <span class="subreddit">
+                                r/{{ post.subreddit }}
+                            </span> 
+                            • {{ post.age }}
+                        </div>
+                    </div>
+                
+                    <!-- Titre -->
+                    <h5 class="mb-2">
+                        <a href="{% url 'moderation' %}?id={{ post.post_id }}&age={{ post.age }}&img={{ post.image|urlencode }}" class="titre text-decoration-none">
+                            {{ post.titre }}
+                        </a>
+                    </h5>
+                
+                    <!-- Image Post -->
+                    {% if post.image %}
+                        <img src="{{ post.image }}" alt="image post" class="image">
+                    {% endif %}
+                
+                    <!-- Score et commentaires -->
+                    <p>{{ post.score|floatformat:0 }} votes • {{ post.commentaires }} commentaires</p>
+                            
+                </div>
+
+                <!-- Bouton "Voir le Post" -->
+                <div class="mt-3">
+                    <a href="{% url 'moderation' %}?id={{ post.post_id }}&age={{ post.age }}&img={{ post.image|urlencode }}" class="btn btn-sm btn-custom">Voir le post</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

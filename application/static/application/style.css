@@ -1,0 +1,126 @@
+/* Paramètres globaux */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+}
+
+/* Police d'écriture */
+@font-face {
+    font-family: 'Marianne';
+    src: url('/static/fonts/Marianne-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Marianne';
+    src: url('/static/fonts/Marianne-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Marianne';
+    src: url('/static/fonts/Marianne-Light.woff2') format('woff2');
+    font-weight: 300; /* Light */
+    font-style: normal;
+}
+body {
+    font-family: 'Marianne', sans-serif !important;
+    background-color: #0e1113;
+    color: #8ba2ad;
+}
+button, input, textarea, select {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+/* Structure principale de la page */
+.container-principal { 
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+header, main, footer {
+    display: flex;
+    width: 100%;
+}
+
+/* Header */
+header {
+    height: 135px;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2a3236;
+    border-bottom: 0.1rem solid #00000020;
+}
+header > .container-titre {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-titre > h1 > a {
+    text-decoration: none; 
+    color: white;
+    font-weight: bold;
+}
+.container-titre > a > img {
+    width: 125px;
+    height: auto;
+}
+.formulaire {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding-right: 50px;
+}
+.formulaire > input {
+    padding: 6px 12px 6px 12px;
+    border: 1px solid #dee2e6;
+    border-radius: 0.375rem;
+    min-width: 300px;
+}
+.formulaire > .btn:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Main */
+main {
+    flex: 1;
+    padding: 0 300px;
+    background-color: #0e1113;
+}
+.container-main {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+}
+.breadcrumb-item, .breadcrumb-item.active {
+    color: #8ba2ad;
+}
+.breadcrumb-item > a {
+    text-decoration: none; 
+    color: inherit;
+}
+
+
+/* Footer */
+footer {
+    height: 70px;
+    background-color: #2a3236;
+    border-top: 0.1rem solid #00000020;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer > div {
+    font-size: 10pt;
+    color: white;
+}

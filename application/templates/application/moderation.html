@@ -1,0 +1,137 @@
+{% extends 'application/index.html' %}
+
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'application/posts.css' %}" />
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{% static 'application/script.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+
+    <div class="container-moderation">
+        {% if post %}
+            <!-- Affichage du Post -->
+            <div class="card mb-5 p-3 shadow-sm">
+                <div class="d-flex flex-column gap-3">
+
+                    <div class="d-flex align-items-center">
+                        <!-- Icone du subreddit -->
+                        <img src="{{ post.subreddit_icon }}" alt="icon" class="icon">
+                
+                        <!-- Subreddit et date -->
+                        <div class="mb-1">
+                            <span class="subreddit">
+                                r/{{ post.subreddit }}
+                            </span> 
+                            • {{ post.age }}
+                        </div>
+                    </div>
+                
+                    <!-- Titre -->
+                    <h5 class="mb-2">
+                        <a href="{% url 'moderation' %}?id={{ post.post_id }}&age={{ post.age }}" class="titre text-decoration-none">
+                            {{ post.titre }}
+                        </a>
+                    </h5>
+
+                    <!-- Contenu du post -->
+                    {% if post.body %}
+                        <p>{{ post.body }}</p>
+                    {% endif %}
+                
+                    <!-- Image du post -->
+                    {% if post.image %}
+                        <img src="{{ post.image }}" alt="image post" class="image">
+                    {% endif %}
+                
+                    <!-- Score et commentaires -->
+                    <p>{{ post.score|floatformat:0 }} votes • {{ post.nb_commentaires_clean }} commentaires</p>
+                            
+                </div>
+            </div>
+
+            <h4 class="mb-3">Commentaires</h4>
+
+            <!-- Affichage des Commentaires -->
+            {% for commentaire in commentaires_clean %}
+                <div class="card mb-4 p-3 shadow-sm">
+                    <div class="d-flex flex-column gap-3">
+
+                        <div class="d-flex align-items-center">
+                            <!-- Icone du commentaire -->
+                            <img src="{{ commentaire.auteur_icon }}" alt="icon" class="icon">
+                    
+                            <!-- Auteur et date -->
+                            <div class="mb-1">
+                                <span class="subreddit">
+                                    {{ commentaire.auteur }}
+                                </span> 
+                                • {{ commentaire.age }}
+                            </div>
+                        </div>
+
+                        <!-- Contenu du commentaire -->
+                        {% if commentaire.body %}
+                            <p>{{ commentaire.body }}</p>
+                        {% endif %}
+                    
+                        <!-- Score du commentaire -->
+                        <p>{{ commentaire.score|floatformat:0 }} votes</p>  
+                    </div>
+                </div>
+            {% empty %}
+                <p>Aucun commentaire non violent trouvé.</p>
+            {% endfor %}
+
+            <!-- Bouton pour afficher les commentaires filtrés -->
+            {% if commentaires_filtres %}
+                <div class="text-center mt-5 mb-5">
+                    <button class="btn btn-warning" id="btnCommentairesFiltres">Afficher les commentaires filtrés</button>
+                </div>
+
+                <div id="commentairesFiltres" style="display: none;">
+                    <h4 class="mt-5 mb-3">Commentaires filtrés</h4>
+                    {% for commentaire in commentaires_filtres %}
+                        <div class="card mb-4 p-3 shadow-sm">
+                            <div class="d-flex flex-column gap-3">
+        
+                                <div class="d-flex align-items-center">
+                                    <!-- Icone du commentaire -->
+                                    <img src="{{ commentaire.auteur_icon }}" alt="icon" class="icon">
+                            
+                                    <!-- Auteur et date -->
+                                    <div class="mb-1">
+                                        <span class="subreddit">
+                                            {{ commentaire.auteur }}
+                                        </span> 
+                                        • {{ commentaire.age }}
+                                    </div>
+                                </div>
+        
+                                <!-- Contenu du commentaire -->
+                                <p>
+                                    {% for mot in commentaire.mots %}
+                                        {% if mot in commentaire.mots_rouge %}
+                                            <span class="text-danger fw-bold">{{ mot }}</span>
+                                        {% else %}
+                                            {{ mot }}
+                                        {% endif %}
+                                    {% endfor %}
+                                </p>
+                            
+                                <!-- Score du commentaire -->
+                                <p>{{ commentaire.score|floatformat:0 }} votes</p>  
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+        {% endif %}
+    </div>
+
+{% endblock %}
