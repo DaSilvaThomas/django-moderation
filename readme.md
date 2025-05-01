@@ -2,11 +2,11 @@
 
 Une application web Django permettant de naviguer et modérer du contenu provenant de Reddit avec filtrage automatique des commentaires toxiques.
 
-## 📋 Description
+## Description
 
 Reddit Modération est une application qui utilise l'API Reddit (PRAW) pour afficher les posts populaires et rechercher du contenu sur Reddit. L'application offre également une fonctionnalité de modération qui filtre automatiquement les commentaires contenant des mots toxiques ou inappropriés.
 
-## ✨ Fonctionnalités
+## Fonctionnalités
 
 - **Page d'accueil** : Affiche les 10 posts les plus populaires ("hot") sur Reddit
 - **Recherche** : Permet de rechercher des posts Reddit sur un sujet spécifique
@@ -14,14 +14,14 @@ Reddit Modération est une application qui utilise l'API Reddit (PRAW) pour affi
 - **Interface intuitive** : Design responsive avec Bootstrap pour une utilisation sur desktop et mobile
 - **Fil d'Ariane** : Navigation claire avec un système de "breadcrumbs"
 
-## 🔧 Prérequis techniques
+## Prérequis techniques
 
 - Python 3.x
 - Django 3.x ou supérieur
 - Module PRAW (Python Reddit API Wrapper)
 - Compte développeur Reddit (pour obtenir client_id, client_secret et user_agent)
 
-## 📦 Installation
+## Installation
 
 1. Clonez ce dépôt :
 ```
@@ -50,7 +50,7 @@ python manage.py runserver
 
 5. Accédez à l'application dans votre navigateur à l'adresse http://127.0.0.1:8000/accueil/
 
-## 🚀 Utilisation
+## Utilisation
 
 ### Page d'accueil
 - La page d'accueil affiche automatiquement les 10 posts les plus populaires de Reddit
@@ -66,7 +66,7 @@ python manage.py runserver
 - Cliquez sur le bouton "Afficher les commentaires filtrés" pour voir les commentaires contenant des mots toxiques
 - Les mots toxiques sont mis en évidence en rouge
 
-## 📝 Liste des mots filtrés
+## Liste des mots filtrés
 
 L'application filtre automatiquement les commentaires contenant les mots suivants :
 ```
@@ -77,7 +77,7 @@ L'application filtre automatiquement les commentaires contenant les mots suivant
 
 Vous pouvez modifier cette liste dans la fonction `moderation_view` du fichier `views.py`.
 
-## 🏗️ Structure du projet
+## Structure du projet
 
 - **views.py** : Contient les fonctions de vue pour récupérer et traiter les données Reddit
 - **templates/application/** :
@@ -90,6 +90,6 @@ Vous pouvez modifier cette liste dans la fonction `moderation_view` du fichier `
   - **posts.css** : Styles pour l'affichage des posts
   - **script.js** : JavaScript pour l'interaction (affichage/masquage des commentaires filtrés)
 
-## 👨‍💻 Développé par
+## Développé par
 
 Thomas Da Silva - Université Paris 8 Vincennes - Saint-Denis
