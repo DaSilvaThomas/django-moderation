@@ -21,9 +21,9 @@ Reddit Modération est une application qui utilise l'API Reddit (PRAW) pour affi
 - Module PRAW (Python Reddit API Wrapper)
 - Compte développeur Reddit (pour obtenir client_id, client_secret et user_agent)
 
-![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Django](https://img.shields.io/badge/Django-5.2-092E20?style=for-the-badge&logo=django&logoColor=white)
-![PRAW](https://img.shields.io/badge/PRAW-Reddit%20API-FF4500?style=for-the-badge&logo=reddit&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=social&logo=python&logoColor=white)
+![Django](https://img.shields.io/badge/Django-5.2-092E20?style=social&logo=django&logoColor=white)
+![PRAW](https://img.shields.io/badge/PRAW-Reddit%20API-FF4500?style=social&logo=reddit&logoColor=white)
 ![Reddit Dev](https://img.shields.io/badge/Reddit-Developer%20Account-FF4500?style=for-the-badge&logo=reddit&logoColor=white)
 ![SQLite](https://img.shields.io/badge/Database-SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
 ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
