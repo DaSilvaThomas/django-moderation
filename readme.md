@@ -21,14 +21,14 @@ Reddit Modération est une application qui utilise l'API Reddit (PRAW) pour affi
 - Module PRAW (Python Reddit API Wrapper)
 - Compte développeur Reddit (pour obtenir client_id, client_secret et user_agent)
 
-![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Django](https://img.shields.io/badge/Django-5.2-092E20?style=for-the-badge&logo=django&logoColor=white)
-![PRAW](https://img.shields.io/badge/PRAW-Reddit%20API-FF4500?style=for-the-badge&logo=reddit&logoColor=white)
-![Reddit Dev](https://img.shields.io/badge/Reddit-Developer%20Account-FF4500?style=for-the-badge&logo=reddit&logoColor=white)
-![SQLite](https://img.shields.io/badge/Database-SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
-![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)
+![Python](https://badgen.net/badge/python/3.x/3776AB?icon=python&label=GitHub%20Readme%20Stats)
+![Django](https://badgen.net/badge/django/5.2/092E20?icon=django&label=GitHub%20Readme%20Stats)
+![PRAW](https://badgen.net/badge/praw/Reddit%20API/FF4500?icon=reddit&label=GitHub%20Readme%20Stats)
+![Reddit Dev](https://badgen.net/badge/reddit/Developer%20Account/FF4500?icon=reddit&label=GitHub%20Readme%20Stats)
+![SQLite](https://badgen.net/badge/database/SQLite/003B57?icon=sqlite&label=GitHub%20Readme%20Stats)
+![HTML](https://badgen.net/badge/html5/E34F26?icon=html5&label=GitHub%20Readme%20Stats)
+![CSS](https://badgen.net/badge/css3/1572B6?icon=css3&label=GitHub%20Readme%20Stats)
+![Bootstrap](https://badgen.net/badge/bootstrap/5.3/7952B3?icon=bootstrap&label=GitHub%20Readme%20Stats)
 
 ## Installation
 
